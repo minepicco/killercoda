@@ -5,17 +5,17 @@
 ### It can also be disabled
 `copying disabled`{{}}
 
-### Execute a command per click
+### ディレクトリ内のファイルシステムを一覧表示します。
 `ls -lah`{{exec}}
 
-### Send Ctrl+c before execute
-Run a blocking command:
+### 10秒感スリープします。Ctrl+cで中断できます。
+次のコマンドを実行すると開始します:
 `sleep 10s`{{exec}}
 
-End it and run another:
+こちらをクリックするとスリープ中でも中断して、whoami(現在実行中のユーザー名を表示)を実行します:
 `whoami`{{exec interrupt}}
 
-### Copy multiline code block
+### 以下は2つのコードを連続実行します。
 ```
 uname -r
 pwd
