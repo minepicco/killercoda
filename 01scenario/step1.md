@@ -1,15 +1,22 @@
-### まずはDockerのバージョンを確認します。
+### バージョン確認
+dockerのバージョンを確認します。
+
 `docker --version`{{exec}}
-### まずはDocker-composeのバージョンも確認します。
-`docker-compose --version`{{exec}}
-### nginxをデプロイしてみます。
+
+### デプロイ
+docker hubに公開されているnginxのオフィシャルイメージを使ってWebサーバーをデプロイします。
+
 `docker run --name nginx -p 80:80 -d nginx:latest`{{exec}}
 
-### 稼働中のコンテナ一覧を見てみます。
+### コンテナ一覧表示
+次のコマンドを使って稼働中のコンテナを一覧表示します。
+
 `docker ps`{{exec}}
 
-### nginxにアクセスし、ウェルカムページが表示されることを確認します。
-[ACCESS NGINX]({{TRAFFIC_HOST1_80}})
+### アクセステスト
+nginxにアクセスし、ウェルカムページが表示されることを確認します。
+
+[NGINXにアクセス]({{TRAFFIC_HOST1_80}})
 
 ### nginxを「停止」します。
 `docker stop nginx`{{exec}}
