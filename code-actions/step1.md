@@ -6,11 +6,11 @@
 `copying disabled`{{}}
 
 ### Execute a command per click
-`ls -lh`{{exec}}
+`ls -lah`{{exec}}
 
 ### Send Ctrl+c before execute
 Run a blocking command:
-`sleep 1d`{{exec}}
+`sleep 10s`{{exec}}
 
 End it and run another:
 `whoami`{{exec interrupt}}
