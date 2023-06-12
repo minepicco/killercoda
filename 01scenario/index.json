@@ -1,0 +1,17 @@
+{
+  "title": "Dockerを使ってみよう",
+  "description": "色々なDockerコマンドを打ってみましょう",
+  "details": {
+    "intro": {
+      "text": "intro.md"
+    },
+    "steps": [
+      {
+        "text": "step1.md"
+      }
+    ]
+  },
+  "backend": {
+    "imageid": "ubuntu"
+  }
+}
