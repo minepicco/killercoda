@@ -1,49 +1,22 @@
-### まずはDockerのバージョンを確認。
-`docker --version`{{exec}}
-### まずはDocker-composeのバージョンも確認。
-`docker-compose --version`{{exec}}
-### nginxをデプロイしてみる。
-`docker run -p 80:80 -d nginx:latest`{{exec}}
+## 5. nginxを「停止」します。
+##### 次のコマンドを使ってnginxコンテナを停止します。
+`docker stop nginx`{{exec}}
 
-### nginxにアクセスする。
-[ACCESS NGINX]({{TRAFFIC_HOST1_80}})
+## 6. コンテナ一覧表示
+##### 次のコマンドを使って稼働中のコンテナを一覧表示します。
+`docker ps`{{exec}}
 
-### Single line code blocks can be copied by default
-`copy me`
+##### 停止も含めた稼働中のコンテナ一覧を見てみます。
+`docker ps -a`{{exec}}
 
-### It can also be disabled
-`copying disabled`{{}}
+## 7. 再アクセステスト
+##### 再度アクセスし、ページが存在しないことを確認します。
+[NGINXにアクセス]({{TRAFFIC_HOST1_80}})
 
-### ディレクトリ内のファイルシステムを一覧表示します。
-`ls -lah`{{exec}}
+## 8. コンテナの削除
+##### nginxコンテナを削除します。
+`docker rm nginx`{{exec}}
 
-### 10秒感スリープします。Ctrl+cで中断できます。
-次のコマンドを実行すると開始します:
-`sleep 10s`{{exec}}
-
-こちらをクリックするとスリープ中でも中断して、whoami(現在実行中のユーザー名を表示)を実行します:
-`whoami`{{exec interrupt}}
-
-### 以下は2つのコードを連続実行します。
-```
-uname -r
-pwd
-```{{copy}}
-
-### Execute multiline code block
-
-```
-uname -r
-pwd
-```{{exec}}
-
-
-### Execute multiline code block with Ctrl+c
-Run a blocking command:
-`sleep 1d`{{exec}}
-
-End it and run others:
-```
-uname -r
-whoami
-```{{exec interrupt}}
+## 9. コンテナの一覧表示
+##### 停止中も含めた稼働中のコンテナ一覧を見てみます。
+`docker ps -a`{{exec}}
