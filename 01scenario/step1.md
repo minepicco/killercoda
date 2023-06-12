@@ -1,49 +1,58 @@
-### まずはDockerのバージョンを確認。
+### まずはDockerのバージョンを確認します。
 `docker --version`{{exec}}
-### まずはDocker-composeのバージョンも確認。
+### まずはDocker-composeのバージョンも確認します。
 `docker-compose --version`{{exec}}
-### nginxをデプロイしてみる。
-`docker run -p 80:80 -d nginx:latest`{{exec}}
+### nginxをデプロイしてみます。
+`docker run --name nginx -p 80:80 -d nginx:latest`{{exec}}
 
-### nginxにアクセスする。
+### 稼働中のコンテナ一覧を見てみます。
+`docker ps`{{exec}}
+
+### nginxにアクセスし、ウェルカムページが表示されることを確認します。
 [ACCESS NGINX]({{TRAFFIC_HOST1_80}})
 
-### Single line code blocks can be copied by default
-`copy me`
+### nginxを「停止」します。
+`docker stop nginx`{{exec}}
 
-### It can also be disabled
-`copying disabled`{{}}
+### 稼働中のコンテナ一覧を見てみます。
+`docker ps`{{exec}}
 
-### ディレクトリ内のファイルシステムを一覧表示します。
-`ls -lah`{{exec}}
+### 停止も含めた稼働中のコンテナ一覧を見てみます。
+`docker ps -a`{{exec}}
 
-### 10秒感スリープします。Ctrl+cで中断できます。
-次のコマンドを実行すると開始します:
-`sleep 10s`{{exec}}
+### 再度アクセスし、ページが存在しないことを確認します。
+[ACCESS NGINX]({{TRAFFIC_HOST1_80}})
 
-こちらをクリックするとスリープ中でも中断して、whoami(現在実行中のユーザー名を表示)を実行します:
-`whoami`{{exec interrupt}}
+### nginxを削除します。
+`docker rm nginx`{{exec}}
 
-### 以下は2つのコードを連続実行します。
+### 停止も含めた稼働中のコンテナ一覧を見てみます。
+`docker ps -a`{{exec}}
+
+### ホストにダウンロードされているコンテナイメージを見てみます。
+`docker images`{{exec}}
+
+### もう一度nginxをデプロイしてみます。
+イメージはすでにダウンロード済みなので、起動が早いです:
+`docker run --name nginx -p 80:80 -d nginx:latest`{{exec}}
+
+### nginxにアクセスし、ウェルカムページが表示されることを確認します。
+[ACCESS NGINX]({{TRAFFIC_HOST1_80}})
+
+### 稼働中のコンテナ一覧を見てみます。
+`docker ps`{{exec}}
+
+### nginxを「停止」し、削除します。
 ```
-uname -r
-pwd
-```{{copy}}
-
-### Execute multiline code block
-
-```
-uname -r
-pwd
+docker stop nginx
+docker rm nginx
 ```{{exec}}
 
+### ホストにダウンロードされているコンテナイメージを見てみます。
+`docker images`{{exec}}
 
-### Execute multiline code block with Ctrl+c
-Run a blocking command:
-`sleep 1d`{{exec}}
+### nginxイメージを削除します。
+`docker rmi nginx:latest`{{exec}}
 
-End it and run others:
-```
-uname -r
-whoami
-```{{exec interrupt}}
+### ホストにダウンロードされているコンテナイメージを見てみます。
+`docker images`{{exec}}
