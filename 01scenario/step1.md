@@ -1,3 +1,12 @@
+### まずはDockerのバージョンを確認。
+`docker --version`{{exec}}
+### まずはDocker-composeのバージョンも確認。
+`docker-compose --version`{{exec}}
+### nginxをデプロイしてみる。
+`docker run -p 80:80 -d nginx:latest`{{exec}}
+
+### nginxにアクセスする。
+[ACCESS NGINX]({{TRAFFIC_HOST1_80}})
 
 ### Single line code blocks can be copied by default
 `copy me`
