@@ -12,4 +12,8 @@
 
 ## 4. アクセステスト
 ##### nginxにアクセスし、ウェルカムページが表示されることを確認 します。
-[NGINXにアクセス]({{TRAFFIC_HOST1_80}})
+[NGINXにアクセス]({{TRAFFIC_HOST1_80}}
+
+[ユーザー01のクレデンシャル](https://www.macnica.co.jp)
+
+![画像](/assets/logo.png)
